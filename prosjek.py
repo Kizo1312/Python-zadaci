@@ -16,11 +16,11 @@ if count >0:
     print("nedovoljan")
 elif prosjek >= 4.5:
     print(prosjek, "odlican")
-elif prosjek >= 3.5 and prosjek <4.5:
+elif prosjek >= 3.5:
     print(prosjek, "vrlo dobar")
-elif prosjek >= 2.5 and prosjek <3.5:
+elif prosjek >= 2.5:
     print(prosjek, " dobar")
-elif prosjek >= 1.5 and prosjek <2.5:
+elif prosjek >= 1.5:
     print(prosjek, "dovoljan")
 else:
     print(prosjek, "nedovoljan")
