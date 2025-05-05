@@ -1,6 +1,8 @@
 import matematika
 import math
 import random
+import os
+import statistics
 from datetime import datetime
 print (matematika.kvadrat(3.12,5))
 print(math.sqrt(25))
@@ -23,3 +25,9 @@ trenutno = datetime.now()
 print(trenutno)
 print(trenutno.date())
 print(trenutno.strftime("%H:%M:%S"))    
+print(os.listdir())
+
+brojevi = [4,5,6,7,8,9,130685398,2]
+print(statistics.mean(brojevi))
+print(statistics.median(brojevi))
+print(statistics.stdev(brojevi))
