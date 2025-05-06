@@ -13,6 +13,7 @@ def create_passenger(index, vrata):
         "vrata2":0
 
     }
+    return passenger
 for i in range(z):
     z1,z2,z3 = map(int, input().split(" "))
     if z2 in indexi:
@@ -23,10 +24,13 @@ for i in range(z):
 
 
 
-        indexi.remove(z2)
+        
     else:
         indexi.append(z2)
         putnici.append(create_passenger(z2, z3))
+        for j in range(indexi):
+            if putnici[j]["index"] ==j:
+                putnici[j]["stanice"] +=1
         
 print(putnici)
 
