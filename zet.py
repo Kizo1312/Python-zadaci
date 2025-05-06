@@ -21,6 +21,7 @@ for i in range(z):
             if putnici[j]["index"] == z2:
                 price = putnici[j]["stanice"]*5
                 cijena+=price
+                
 
 
 
