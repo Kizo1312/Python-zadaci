@@ -8,6 +8,8 @@ def dodaj_jednako():
 
 def dodaj_znak(znak):
     labela.config(text=f"{labela.cget('text')}{znak}")
+def obrisi():
+    labela.config(text="")
 
 
 
@@ -17,49 +19,21 @@ root.title("demo")
 
 
 
-plus = Button(root,text="+", command= lambda:dodaj_znak("+") )
-plus.grid(row=5, column=0)
+buttons = [
+    ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('/', 1, 3),
+    ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
+    ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3),
+    ('0', 4, 0), ('=', 4, 1), ('C', 4, 2), ('+', 4, 3),
+]
 
-jedinica = Button(root, text="1", command=lambda:dodaj_znak("1"))
-jedinica.grid(row=3, column=0)
-
-
-dvojka = Button(root, text="2", command=lambda:dodaj_znak("2"))
-dvojka.grid(row=3, column=1)
-
-trojka = Button(root, text="3", command=lambda:dodaj_znak("3"))
-trojka.grid(row=3, column=2)
-
-cetvorka = Button(root, text="4", command=lambda:dodaj_znak("4"))
-cetvorka.grid(row=2, column=0)
-
-petica = Button(root, text="5", command=lambda:dodaj_znak("5"))
-petica.grid(row=2, column=1)
-
-sestica = Button(root, text="6", command=lambda:dodaj_znak("6"))
-sestica.grid(row=2, column=2)
-
-sedmica = Button(root, text="7", command=lambda:dodaj_znak("7"))
-sedmica.grid(row=1, column=0)
-
-osmica = Button(root, text="8", command=lambda:dodaj_znak("8"))
-osmica.grid(row=1, column=1)
-
-devetka = Button(root, text="9", command=lambda:dodaj_znak("9"))
-devetka.grid(row=1, column=2)
-
-jednako = Button(root, text="=", command=dodaj_jednako)
-jednako.grid(row=4, column=1)
-
-minus = Button(root, text="-", command=lambda:dodaj_znak("-"))
-minus.grid(row=3, column=3)
-
-puta = Button(root, text="*", command=lambda:dodaj_znak("*"))
-puta.grid(row=2, column=3)
-
-podijeljeno = Button(root, text="/", command=lambda:dodaj_znak("/"))
-podijeljeno.grid(row=1, column=3)
-
+for (text, row, col) in buttons:
+    if text == '=':
+        btn = Button(root, text=text, width=5, height=2, command=dodaj_jednako)
+    elif text == 'C':
+        btn = Button(root, text=text, width=5, height=2, command=obrisi)
+    else:
+        btn = Button(root, text=text, width=5, height=2, command=lambda t=text: dodaj_znak(t))
+    btn.grid(row=row, column=col, padx=5, pady=5)
 
 
 
@@ -70,11 +44,6 @@ podijeljeno.grid(row=1, column=3)
 labela = Label(root, text="")
 labela.grid(row=0, column=0, columnspan=4)
 
-nula = Button(root, text="0", command=lambda:dodaj_znak("0"))
-nula.grid(row=4, column=0)
 
-
-clear = Button(root, text="C", command=lambda: labela.config(text=""))
-clear.grid(row=4, column=2)
 
 root.mainloop()
