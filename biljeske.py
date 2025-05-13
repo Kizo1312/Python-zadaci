@@ -15,6 +15,7 @@ def prikazi_text():
         naziv =listbox.get(selected_item[0]) 
         with open(f"{naziv}", "r") as f:
             content = f.readline()
+            messageBox.delete("1.0", "end")
             messageBox.insert("1.0",content)
     
             
