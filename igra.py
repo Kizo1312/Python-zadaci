@@ -14,7 +14,7 @@ def obrisi():
 
 
 root= Tk()
-root.title("demo")
+root.title("kalkulator")
 
 
 
@@ -33,7 +33,7 @@ for (text, row, col) in buttons:
         btn = Button(root, text=text, width=5, height=2, command=obrisi)
     else:
         btn = Button(root, text=text, width=5, height=2, command=lambda t=text: dodaj_znak(t))
-    btn.grid(row=row, column=col, padx=5, pady=5)
+    btn.grid(row=row, column=col)
 
 
 
