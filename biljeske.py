@@ -12,10 +12,10 @@ def spremi():
 def prikazi_text():
     selected_item = listbox.curselection()
     if selected_item:  
-        index = selected_item[0]
-        tag_name = listbox.get(index)
+        with open(f"{selected_item}", "r") as f:
+            content = f.readline()
     
-    messageBox.tag_add(tag_name,"1.0","end")
+        messageBox.tag_add(content,"1.0","end")
 
 
 

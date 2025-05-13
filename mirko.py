@@ -15,6 +15,8 @@ while odrezano < m:
     
 print("visina:",visina)
         
-
+while odrezano < m:
+    odrezano =0
+    visina -=1
         
 
