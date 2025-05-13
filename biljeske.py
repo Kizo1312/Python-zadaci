@@ -5,18 +5,23 @@ def spremi():
     content= messageBox.get("1.0", "end-1c")
     with open(f"{title}.txt", "w") as f:
         f.write(content)
-        spremljene.config(text=f"{title}.txt \n")
+        spremljene.config(text=f"{title}.txt")
         listbox.insert(1, spremljene.cget("text"))
     messageBox.delete("1.0", "end")
     textBox.delete("1.0", "end")
 def prikazi_text():
     selected_item = listbox.curselection()
-    if selected_item:  
-        with open(f"{selected_item}", "r") as f:
+    if selected_item: 
+        naziv =listbox.get(selected_item[0]) 
+        with open(f"{naziv}", "r") as f:
             content = f.readline()
+            messageBox.insert("1.0",content)
     
-        messageBox.tag_add(content,"1.0","end")
+            
+        
+        
 
+        
 
 
 root=Tk()
